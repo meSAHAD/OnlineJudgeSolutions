@@ -1,0 +1,61 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <map>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    int t = 1;
+    cin >> t;
+
+    while (t--)
+    {
+        int n, m;
+        cin >> n >> m;
+
+        string s;
+        cin >> s;
+
+        vector<int> a(m, 0);
+        for (int i = 0; i < m; ++i)
+        {
+            cin >> a[i];
+        }
+
+        string s2;
+        cin >> s2;
+
+        sort(s2.begin(), s2.end());
+
+        map<int, int> mp;
+        for (auto it : a)
+        {
+            mp[it]++;
+        }
+
+        // Now I have positions
+        int extra = 0;
+        for (auto it : mp)
+        {
+            extra += it.second - 1;
+        }
+
+        // Extra end se nikal dege
+        s2 = s2.substr(0, m - extra);
+
+        int i = 0;
+        for (auto it : mp)
+        {
+            int pos = it.first;
+            s[pos - 1] = s2[i];
+            i++;
+        }
+
+        cout << s << endl;
+    }
+
+    return 0;
+}
