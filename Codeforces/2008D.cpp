@@ -1,3 +1,5 @@
+// not accepted,,doesn,t workk
+
 #include<bits/stdc++.h>
 using namespace std;
 
