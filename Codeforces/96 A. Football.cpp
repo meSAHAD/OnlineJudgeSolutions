@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 int main()
 {
     string s;
@@ -19,7 +20,6 @@ int main()
             break;
         }
     }
-    //cout<<zero<<" "<<one<<endl;
     if(one >= 7 || zero >= 7){
         cout<<"YES"<<endl;
     }
